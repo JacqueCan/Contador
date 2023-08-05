@@ -5,6 +5,8 @@
  */
 package contador;
 
+import java.awt.Color;
+
 /**
  *
  * @author Yons Sánchez
@@ -21,6 +23,8 @@ public class VContador extends javax.swing.JFrame {
     public VContador() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,6 +38,8 @@ public class VContador extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txt_numero = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btn_disminuir = new javax.swing.JButton();
         btn_reiniciar = new javax.swing.JButton();
         btn_click = new javax.swing.JButton();
 
@@ -47,10 +53,45 @@ public class VContador extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
         jLabel1.setText(" Contador");
 
-        txt_numero.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        txt_numero.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         txt_numero.setText("0");
 
-        btn_reiniciar.setText("Reinicar Contador");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txt_numero, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txt_numero)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+
+        txt_numero.getAccessibleContext().setAccessibleName("txt_numero");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        btn_disminuir.setText("Disminuir");
+        btn_disminuir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btn_disminuir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_disminuirActionPerformed(evt);
+            }
+        });
+
+        btn_reiniciar.setText("Reiniciar");
         btn_reiniciar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_reiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,7 +99,7 @@ public class VContador extends javax.swing.JFrame {
             }
         });
 
-        btn_click.setText("CLICK ");
+        btn_click.setText("Incrementar");
         btn_click.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_click.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,57 +107,49 @@ public class VContador extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(txt_numero))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_reiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(btn_click))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_click, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                    .addComponent(btn_reiniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_disminuir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_numero)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_click)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(btn_disminuir)
+                .addGap(18, 18, 18)
                 .addComponent(btn_reiniciar)
-                .addGap(23, 23, 23))
+                .addGap(18, 18, 18)
+                .addComponent(btn_click)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        txt_numero.getAccessibleContext().setAccessibleName("txt_numero");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(27, 27, 27)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -127,6 +160,17 @@ public class VContador extends javax.swing.JFrame {
         contador = 0;
         String numero = String.valueOf(contador);
         txt_numero.setText(numero);
+         if (contador > 0) {
+            
+            txt_numero.setForeground(Color.green);
+        } else {
+            if (contador < 0 ) {
+                txt_numero.setForeground(Color.red);
+                
+            }else{
+                txt_numero.setForeground(Color.blue);
+            }
+        }
     }//GEN-LAST:event_btn_reiniciarActionPerformed
 
     private void btn_clickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clickActionPerformed
@@ -134,10 +178,39 @@ public class VContador extends javax.swing.JFrame {
         contador ++;
         String numero = String.valueOf(contador);
         txt_numero.setText(numero);
-       
+        if (contador > 0) {
+            
+            txt_numero.setForeground(Color.green);
+        } else {
+            if (contador < 0 ) {
+                txt_numero.setForeground(Color.red);
+                
+            }else{
+                txt_numero.setForeground(Color.blue);
+            }
+        }
        
         
     }//GEN-LAST:event_btn_clickActionPerformed
+
+    private void btn_disminuirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_disminuirActionPerformed
+        // TODO add your handling code here:
+        contador --;
+        String numero = String.valueOf(contador);
+        txt_numero.setText(numero);
+        
+         if (contador > 0) {
+            
+            txt_numero.setForeground(Color.green);
+        } else {
+            if (contador < 0 ) {
+                txt_numero.setForeground(Color.red);
+                
+            }else{
+                txt_numero.setForeground(Color.blue);
+            }
+        }
+    }//GEN-LAST:event_btn_disminuirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,9 +249,11 @@ public class VContador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_click;
+    private javax.swing.JButton btn_disminuir;
     private javax.swing.JButton btn_reiniciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel txt_numero;
     // End of variables declaration//GEN-END:variables
 }
